@@ -1,0 +1,38 @@
+
+# Ruta de tu archivo CSV (el que usa punto y coma)
+$csvPath = ".\datos_firmas.csv"
+
+# Importar los datos
+$usuarios = Import-Csv -Path $csvPath -Delimiter ";"
+
+# Recorrer cada usuario en el CSV
+foreach ($user in $usuarios) {
+    # Ignorar filas vacías
+    if (![string]::IsNullOrWhiteSpace($user.Email)) {
+        
+        # Recrear el nombre del archivo tal como lo hace tu script de Python: "NOMBRE_APELLIDO.html"
+        $nombreArchivo = ($user.Nombre -replace ' ', '_') + '.html'
+        $rutaFirma = Join-Path -Path ".\Firmas_Generadas_HTML" -ChildPath $nombreArchivo
+
+        # Verificar si el HTML realmente existe
+        if (Test-Path $rutaFirma) {
+            $htmlFirma = Get-Content -Path $rutaFirma -Raw -Encoding UTF8
+            Write-Host "Configurando firma para: $($user.Email)..." -NoNewline
+            
+            # Aplicar la configuración al buzón
+            Set-MailboxMessageConfiguration -Identity $user.Email `
+                -SignatureHtml $htmlFirma `
+                -AutoAddSignature $true `
+                -AutoAddSignatureOnReply $true
+            
+            Write-Host " Listo." -ForegroundColor Green
+        } else {
+            # Si Python no generó la firma o el nombre no coincide, lo reporta
+            Write-Host " Archivo HTML no encontrado para: $($user.Nombre) ($rutaFirma)" -ForegroundColor Red
+        }
+    }
+}
+
+# Desconectar la sesión al terminar
+
+Disconnect-ExchangeOnline -Confirm:$false
