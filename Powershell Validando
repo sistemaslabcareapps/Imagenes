@@ -1,0 +1,50 @@
+# 1. Conectarse a Exchange (ejecuta esto solo si cerraste la sesión anterior)
+# Connect-ExchangeOnline
+
+# 2. Ruta de tu archivo CSV (asegúrate de estar en la misma carpeta, como vimos antes)
+$csvPath = ".\datos_firmas.csv"
+
+# Importar los datos separados por punto y coma
+$usuarios = Import-Csv -Path $csvPath -Delimiter ";"
+
+Write-Host "=== INICIANDO MODO DE PRUEBA DE FIRMAS ===" -ForegroundColor Cyan
+
+# 3. Recorrer cada usuario en el archivo
+foreach ($user in $usuarios) {
+    # Validar que la celda del correo no esté vacía
+    if (![string]::IsNullOrWhiteSpace($user.Email)) {
+        
+        # Armar el nombre del archivo HTML que creó Python
+        $nombreArchivo = ($user.Nombre -replace ' ', '_') + '.html'
+        $rutaFirma = Join-Path -Path ".\Firmas_Generadas_HTML" -ChildPath $nombreArchivo
+
+        # Verificar si el archivo HTML realmente existe en la carpeta
+        if (Test-Path $rutaFirma) {
+            
+            # --- AQUÍ ESTÁ LA MAGIA: Te pregunta antes de hacer nada ---
+            $respuesta = Read-Host "¿Deseas aplicar la firma de prueba a la cuenta $($user.Email)? (S para Sí / N para No)"
+            
+            if ($respuesta -eq 'S' -or $respuesta -eq 's') {
+                $htmlFirma = Get-Content -Path $rutaFirma -Raw -Encoding UTF8
+                Write-Host "Aplicando firma en Microsoft 365 para: $($user.Email)..." -NoNewline
+                
+                # Inyectar la firma
+                Set-MailboxMessageConfiguration -Identity $user.Email `
+                    -SignatureHtml $htmlFirma `
+                    -AutoAddSignature $true `
+                    -AutoAddSignatureOnReply $true
+                
+                Write-Host " ¡Éxito!" -ForegroundColor Green
+            } else {
+                Write-Host "Saltando la cuenta $($user.Email)." -ForegroundColor Yellow
+            }
+            
+        } else {
+            Write-Host "⚠️ Archivo HTML no encontrado para: $($user.Nombre) ($rutaFirma)" -ForegroundColor Red
+        }
+    }
+}
+
+Write-Host "=== PRUEBAS FINALIZADAS ===" -ForegroundColor Cyan
+# Desconectar solo cuando termines definitivamente de trabajar
+# Disconnect-ExchangeOnline -Confirm:$false
