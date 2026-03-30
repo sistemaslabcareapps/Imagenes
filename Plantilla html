@@ -1,0 +1,44 @@
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="font-family: Arial, sans-serif; font-size: 11pt; color: #333333; max-width: 800px; width: 100%;">
+    <tr>
+        <td valign="middle" align="center" style="vertical-align: middle; text-align: center; padding-right: 18px; border-right: 2px solid #239a93; width: 200px;">
+            <img src="https://github.com/sistemaslabcareapps/Imagenes/blob/main/Logo%20Labcare.jpg?raw=true" alt="Labcare" width="190" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;">
+        </td>
+        
+        <td valign="middle" style="vertical-align: middle; padding-left: 15px; line-height: 1.2; word-break: break-word;">
+            <span style="font-size: 20pt; font-weight: bold; color: #000000; text-transform: uppercase;">{{NOMBRE}}</span><br>
+            <span style="font-size: 14pt; color: #239a93;">{{CARGO}}</span><br>
+            
+            <a href="http://www.labcarecolombia.com" style="color: #000000; text-decoration: none; font-weight: bold;">www.labcarecolombia.com</a><br>
+            <a href="mailto:{{EMAIL}}" style="color: #000000; text-decoration: none;">{{EMAIL}}</a><br>
+            <span style="font-weight: bold; color: #000000;">{{TELEFONO}}</span><br>
+            <span style="font-size: 6pt; line-height: 6pt;">&nbsp;</span><br>
+            
+            <a href="https://www.linkedin.com/company/labcare-de-colombia/" style="text-decoration: none;"><img src="https://github.com/sistemaslabcareapps/Imagenes/blob/main/Logo%20Linke.png?raw=true" width="22" alt="LinkedIn" style="border: none; vertical-align: middle;"></a>&nbsp;
+            <a href="https://www.youtube.com/@LabcaredeColombia" style="text-decoration: none;"><img src="https://github.com/sistemaslabcareapps/Imagenes/blob/main/Logo%20Youtube.png?raw=true" width="22" alt="YouTube" style="border: none; vertical-align: middle;"></a>&nbsp;
+            <a href="https://www.instagram.com/labcarecolombia/" style="text-decoration: none;"><img src="https://github.com/sistemaslabcareapps/Imagenes/blob/main/Logo%20Instagram.png?raw=true" width="22" alt="Instagram" style="border: none; vertical-align: middle;"></a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding-top: 15px;">
+            <p style="font-size: 7pt; color: #3a8c3e; margin: 0 0 10px 0;">Antes de imprimir este mensaje piense si es necesario: el medio ambiente es responsabilidad de todos</p>
+            
+            <p style="font-size: 6.5pt; color: #777777; text-align: justify; margin: 0; line-height: 1.3;">
+                AVISO DE CONFIDENCIALIDAD Y PROTECCIÓN DE DATOS PERSONALES:Este correo electrónico, incluyendo sus archivos adjuntos, está destinado exclusivamente al/a los destinatarios/s y puede contener información confidencial y privilegiada. Queda prohibida cualquier revisión, uso, divulgación o distribución no autorizada. Si no es el/la destinatario/s, le rogamos que responda a este correo electrónico y elimine todas las copias del mensaje original. LABCARE DE COLOMBIA SAS, en cumplimiento de la Ley 1581 de 2012, le informa que sus datos personales se procesan de acuerdo con nuestra política de protección de datos. La finalidad de este procesamiento es el desarrollo de nuestro objeto social y la gestión de nuestra relación comercial o profesional. Puede ejercer sus derechos de acceso, rectificación, supresión y prueba de autorización enviando una solicitud al enlace:<a href="https://kawak.com.co/labcarecolombia/pqrs/pqrs_index.php" style="color: #777777; text-decoration: underline;">https://kawak.com.co/labcarecolombia/pqrs/pqrs_index.php</a> o consultando nuestro aviso de privacidad <a href="www.labcarecolombia.com" style="color: #777777; text-decoration: underline;">www.labcarecolombia.comhttps://kawak.com.co/labcarecolombia/pqrs/pqrs_form.php</a>.
+            </p>
+
+            <p style="font-size: 6.5pt; color: #777777; text-align: justify; margin: 0 0 8px 0; line-height: 1.3;">
+                AVISO LEGAL: LABCARE DE COLOMBIA SAS no se responsabiliza de los daños derivados de infecciones por virus como consecuencia de este correo electrónico; por favor, utilice su propio sistema antivirus.
+            </p>
+
+            <p style="font-size: 6.5pt; color: #777777; text-align: justify; margin: 0; line-height: 1.3;">
+                CONFIDENTIALITY AND PERSONAL DATA PROTECTION NOTICE: This e-mail, including any attachments, is for the sole use of the intended recipient(s) and may contain confidential and privileged information. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message. LABCARE DE COLOMBIA SAS, in compliance with Law 1581 of 2012, informs you that your personal data is processed in accordance with our personal data policy. The purpose of this processing is the development of our corporate purpose and the management of our commercial or professional relationship. You may exercise your rights of access, rectification, erasure, and proof of authorization by sending:<a href="https://kawak.com.co/labcarecolombia/pqrs/pqrs_index.php" style="color: #777777; text-decoration: underline;">https://kawak.com.co/labcarecolombia/pqrs/pqrs_index.php</a> consulting our privacy notice<a href="www.labcarecolombia.com" style="color: #777777; text-decoration: underline;">www.labcarecolombia.comhttps://kawak.com.co/labcarecolombia/pqrs/pqrs_form.php</a>.
+            </p>
+            
+            <p style="font-size: 6.5pt; color: #777777; text-align: justify; margin: 0 0 8px 0; line-height: 1.3;">
+                DISCLAIMER: LABCARE DE COLOMBIA SAS does not accept any liability for any damage arising from virus infection as a result of this email - please rely on your own virus checking.
+            </p>
+        </td>
+    </tr>
+
+</table>
