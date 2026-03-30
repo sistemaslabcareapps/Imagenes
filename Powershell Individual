@@ -1,0 +1,15 @@
+
+# 1. Definir variables para la prueba
+$emailPrueba = "sistemas_apps@labcarecolombia.com"
+$rutaFirmaPrueba = ".\Firmas_Generadas_HTML\LEANDRO_CASAS.html"
+
+# 2. Leer el HTML generado por tu script de Python
+$htmlFirma = Get-Content -Path $rutaFirmaPrueba -Raw -Encoding UTF8
+
+# 3. Inyectar la firma en el buzón
+Set-MailboxMessageConfiguration -Identity $emailPrueba `
+    -SignatureHtml $htmlFirma `
+    -AutoAddSignature $true `
+    -AutoAddSignatureOnReply $true
+
+Write-Host "Firma configurada exitosamente para $emailPrueba. Por favor, verifica en Outlook." -ForegroundColor Green
